@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <h1>Hamburger Customizer</h1>
-    <Hamburger />
+    <h1 class="title">Hamburger Customizer</h1>
+    <Hamburger :lineHeight=5 :lineWidth=35 :lineSpacing=7 :lineRadius=5 :lineColor="c0ff33" />
   </div>
 </template>
 
@@ -19,10 +19,12 @@ export default {
 <style>
 #app {
   font-family: Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #120029;
-  margin-top: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.title {
+  text-align: center;
 }
 </style>

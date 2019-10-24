@@ -48,10 +48,5 @@ export default {
 
   span {
     display: block;
-    background-color: red;
-  }
-
-  .open span {
-    background-color: purple;
   }
 </style>

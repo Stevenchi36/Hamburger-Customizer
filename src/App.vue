@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1 class="title">Hamburger Customizer</h1>
-    <Hamburger :lineHeight=5 :lineWidth=35 :lineSpacing=7 :lineRadius=5 :lineColor="c0ff33" />
-    <Style :lineHeight=5 :lineWidth=35 :lineSpacing=7 :lineRadius=5 :lineColor="c0ff33" />
+    <Hamburger :lineHeight=5 :lineWidth=35 :lineSpacing=7 :lineRadius=5 :lineColor="'c0ff33'" />
+    <Style :lineHeight=5 :lineWidth=35 :lineSpacing=7 :lineColor="'c0ff33'" :lineRadius=5 />
   </div>
 </template>
 

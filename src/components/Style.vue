@@ -20,10 +20,10 @@
 <script>
 export default {
   props: {
-    lineHeight: Number,
-    lineWidth: Number,
-    lineSpacing: Number,
-    lineRadius: Number,
+    lineHeight: String,
+    lineWidth: String,
+    lineSpacing: String,
+    lineRadius: String,
     lineColor: String,
   },
 }

@@ -21,10 +21,10 @@ export default {
   },
   data () {
     return {
-      height: 5,
-      width: 35,
-      spacing: 7,
-      radius: 5,
+      height: "5",
+      width: "35",
+      spacing: "7",
+      radius: "5",
       color: '#930eda',
     }
   },

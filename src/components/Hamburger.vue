@@ -35,7 +35,7 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
-    border: 1px solid hsla(0, 0%, 83%, 25%);
+    border: 1px solid hsla(0, 0%, 83%, 60%);
     min-height: 200px;
     max-height: 400px;
     position: relative;

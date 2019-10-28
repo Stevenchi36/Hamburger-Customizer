@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <button @click="isOpen = !isOpen" :class="{open: isOpen}">
+    <button class="make-fixed" @click='isFixed = !isFixed'>Toggle button Position</button>
+    <button @click="isOpen = !isOpen" :class="[{open: isOpen} , {fixed: isFixed}]" class="menu-toggle">
       <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' }"></span>
       <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' }"></span>
       <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px',  }"></span>
@@ -13,6 +14,7 @@ export default {
   data () {
     return {
       isOpen: false,
+      isFixed: false,
     }
   },
   props: {
@@ -34,16 +36,29 @@ export default {
     border: 1px solid hsl(0, 0%, 83%);
     min-height: 200px;
     max-height: 400px;
+    position: relative;
   }
 
-  button {
+  .make-fixed {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-toggle {
     background-color: transparent;
     padding: 0;
     border: none;
   }
 
-  button:hover {
+  .menu-toggle:hover {
     cursor: pointer;
+  }
+
+  .menu-toggle.fixed  {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
   }
 
   span {

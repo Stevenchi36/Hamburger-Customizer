@@ -25,7 +25,7 @@ export default {
       width: 35,
       spacing: 7,
       radius: 5,
-      color: 'c0ff33',
+      color: '#930eda',
     }
   },
   methods: {

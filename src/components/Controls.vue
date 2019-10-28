@@ -21,7 +21,7 @@ export default {
       lineWidth: 35,
       lineSpacing: 7,
       lineRadius: 5,
-      lineColor: 'c0ff33',
+      lineColor: '#930eda',
     }
   },
   methods: {

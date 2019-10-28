@@ -1,11 +1,12 @@
 <template>
   <div class="container">
-    <button class="make-fixed" @click='isFixed = !isFixed'>Toggle button Position</button>
+    <button class="make-fixed" @click='isFixed = !isFixed'>Toggle button position</button>
     <button @click="isOpen = !isOpen" :class="[{open: isOpen} , {fixed: isFixed}]" class="menu-toggle">
       <span :style="[!isOpen ? { backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' } : {backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px', top: Number(lineHeight) + Number(lineSpacing) + 'px'}]"></span>
       <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' }"></span>
       <span :style="[!isOpen ? { backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px'} : {backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', bottom: Number(lineHeight) + Number(lineSpacing) + 'px'}]"></span>
     </button>
+    <p>Click on the menu toggle to view the transition.</p>
   </div>
 </template>
 
@@ -38,6 +39,14 @@ export default {
     min-height: 200px;
     max-height: 400px;
     position: relative;
+  }
+  p {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0.3rem;
+    margin-bottom: 0;
+    color: #535353;
+    font-size: 0.8rem;
   }
 
   .make-fixed {

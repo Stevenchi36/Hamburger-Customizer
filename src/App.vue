@@ -2,7 +2,7 @@
   <div id="app">
     <h1 class="title">Hamburger Customizer</h1>
     <Hamburger :lineHeight="height" :lineWidth="width" :lineSpacing="spacing" :lineRadius="radius" :lineColor="color" />
-    <Controls class="style" v-on:updateHeight="heightUpdate" v-on:updateWidth="widthUpdate" v-on:updateRadius="radiusUpdate" v-on:updateSpacing="spacingUpdate" />
+    <Controls class="style" v-on:updateHeight="heightUpdate" v-on:updateWidth="widthUpdate" v-on:updateRadius="radiusUpdate" v-on:updateSpacing="spacingUpdate" v-on:updateColor="colorUpdate" />
     <Style :lineHeight="height" :lineWidth="width" :lineSpacing="spacing" :lineColor="color" :lineRadius="radius" />
   </div>
 </template>
@@ -40,6 +40,9 @@ export default {
     },
     spacingUpdate: function(value) {
       this.spacing = value;
+    },
+    colorUpdate: function(value) {
+      this.color = value;
     },
   }
 }

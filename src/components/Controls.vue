@@ -8,6 +8,8 @@
     <input @input="log('updateRadius')" v-model="lineRadius" type="range" name="lineRadius" id="" min="0" max="50">
     <label for="lineSpacing">Line Spacing</label>
     <input @input="log('updateSpacing')" v-model="lineSpacing" type="range" name="lineSpacing" id="" min="0" max="50">
+    <label for="lineSpacing">Color</label>
+    <input @input="log('updateColor')" type="color" v-model="lineColor" name="lineColor" id="">
   </div>
 </template>
 
@@ -32,6 +34,9 @@ export default {
       }
       else if (valueToChange == 'updateRadius') {
         this.$emit(valueToChange, this.lineRadius);
+      }
+      else if (valueToChange == 'updateColor') {
+        this.$emit(valueToChange, this.lineColor);
       }
       else {
         this.$emit(valueToChange, this.lineSpacing);

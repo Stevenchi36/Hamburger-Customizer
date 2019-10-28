@@ -70,14 +70,13 @@ export default {
     animate: 0.2s;
     background: #ffffff;
     border-radius: 1.3px;
-    border: 0.2px solid #010101;
   }
   input[type=range]::-moz-range-thumb {
-    border: 1px solid #000000;
-    height: 15px;
-    width: 10px;
+    border: none;
+    height: 18px;
+    width: 12px;
     border-radius: 3px;
-    background: #120029;
+    background: #313131;
     cursor: pointer;
   }
   input[type=range]:focus {

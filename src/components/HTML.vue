@@ -29,7 +29,7 @@ export default {
     background-color: rgb(243, 243, 243);
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1100px) {
     code {
       height: auto;
     }

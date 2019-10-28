@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1 class="title">Hamburger Customizer</h1>
+    <h1 class="title">Custom Menu Toggle</h1>
     <div class="upper-area">
       <Hamburger :lineHeight="height" :lineWidth="width" :lineSpacing="spacing" :lineRadius="radius" :lineColor="color" />
       <Controls class="style" v-on:updateHeight="heightUpdate" v-on:updateWidth="widthUpdate" v-on:updateRadius="radiusUpdate" v-on:updateSpacing="spacingUpdate" v-on:updateColor="colorUpdate" />
@@ -106,14 +106,14 @@ export default {
     display: flex;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1100px) {
     .copy-data {
       flex-direction: column;
     }
   }
   .copy-data > * {
     flex-grow: 0;
-    flex-shrink: 0;
+    flex-shrink: 1;
     flex-basis: 33%;
   }
 
@@ -122,7 +122,7 @@ export default {
     margin-left: 1rem;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1100px) {
     .copy-data > *:last-child,
     .copy-data > *:nth-child(2) {
       margin-left: 0;

@@ -2,9 +2,9 @@
   <div class="container">
     <button class="make-fixed" @click='isFixed = !isFixed'>Toggle button Position</button>
     <button @click="isOpen = !isOpen" :class="[{open: isOpen} , {fixed: isFixed}]" class="menu-toggle">
+      <span :style="[!isOpen ? { backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' } : {backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px', top: Number(lineHeight) + Number(lineSpacing) + 'px'}]"></span>
       <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' }"></span>
-      <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', marginBottom: lineSpacing + 'px' }"></span>
-      <span :style="{ backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px',  }"></span>
+      <span :style="[!isOpen ? { backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px'} : {backgroundColor: lineColor, height: lineHeight + 'px', width: lineWidth + 'px', borderRadius: lineRadius + 'px', bottom: Number(lineHeight) + Number(lineSpacing) + 'px'}]"></span>
     </button>
   </div>
 </template>
@@ -32,8 +32,9 @@ export default {
   .container {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 2rem 0;
-    border: 1px solid hsl(0, 0%, 83%);
+    border: 1px solid hsla(0, 0%, 83%, 25%);
     min-height: 200px;
     max-height: 400px;
     position: relative;
@@ -43,12 +44,17 @@ export default {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 
   .menu-toggle {
     background-color: transparent;
-    padding: 0;
+    padding: 0.5rem;
     border: none;
+    z-index: 999;
   }
 
   .menu-toggle:hover {
@@ -63,5 +69,37 @@ export default {
 
   span {
     display: block;
+    position: relative;
+    transition: top 0.3s 0.3s ease-in-out, bottom 0.3s 0.3s ease-in-out, transform 0.3s, opacity 0s 0.3s ease-in-out;
+  }
+
+  .open span {
+    transition: top 0.3s ease-in-out, bottom 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out, opacity 0s 0.3s ease-in-out;
+  }
+
+  span:first-child {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    opacity: 1;
+  }
+
+  span:last-child {
+    bottom: 0;
+  }
+
+  .open span:first-child {
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+
+  .open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open span:last-child {
+    transform: rotate(-45deg);
+    transform-origin: center;
   }
 </style>

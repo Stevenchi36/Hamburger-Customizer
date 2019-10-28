@@ -3,7 +3,10 @@
     <h1 class="title">Hamburger Customizer</h1>
     <Hamburger :lineHeight="height" :lineWidth="width" :lineSpacing="spacing" :lineRadius="radius" :lineColor="color" />
     <Controls class="style" v-on:updateHeight="heightUpdate" v-on:updateWidth="widthUpdate" v-on:updateRadius="radiusUpdate" v-on:updateSpacing="spacingUpdate" v-on:updateColor="colorUpdate" />
-    <Style :lineHeight="height" :lineWidth="width" :lineSpacing="spacing" :lineColor="color" :lineRadius="radius" />
+    <div class="copy-data">
+      <HTML />
+      <Style :lineHeight="height" :lineWidth="width" :lineSpacing="spacing" :lineColor="color" :lineRadius="radius" />
+    </div>
   </div>
 </template>
 
@@ -11,6 +14,7 @@
 import Hamburger from './components/Hamburger.vue'
 import Controls from './components/Controls.vue'
 import Style from './components/Style.vue'
+import HTML from './components/HTML.vue'
 
 export default {
   name: 'app',
@@ -18,6 +22,7 @@ export default {
     Hamburger,
     Controls,
     Style,
+    HTML,
   },
   data () {
     return {
@@ -49,6 +54,9 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: rgb(248, 239, 255);
+}
 #app {
   font-family: Arial, sans-serif;
   color: #120029;
@@ -62,4 +70,16 @@ export default {
 .style {
   margin-top: 20px;
 }
+.copy-data {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .copy-data {
+    flex-direction: column;
+  }
+}
+.copy-data > * {
+    flex-grow: 1;
+  }
 </style>
